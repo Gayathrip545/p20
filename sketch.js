@@ -22,17 +22,19 @@ function setup() {
 
 
   
-  	wall=createSprite(1500,200, 60, height/2)
-  	wall.shapeColor=color(80,80,80)
+  	wall=createSprite(900,200, 60, height/2);
+  	wall.shapeColor=color("black");
 }
 
 
 function draw() {
-  background(0);
+  background("white");
+	car.collide(wall);
 
-  if(wall.x-car.x < (car.width+wall.width)/2)
+  if(wall.x-car.x <= (car.width+wall.width)/2)
   {
-  	car.velocityX=0;
+  	//car.velocityX=0;
+	 
   	var deformation=0.5 * weight * speed* speed/22500;
 	if(deformation>180)
 	{
